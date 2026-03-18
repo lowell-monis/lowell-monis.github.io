@@ -1,7 +1,3 @@
-# Generated site output — students generate this locally by running build.py,
-# then commit it in their own forked repo for GitHub Pages deployment.
-docs/
-
 # Python virtual environment (created by uv)
 .venv/
 

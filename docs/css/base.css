@@ -1,0 +1,251 @@
+/* ============================================================
+   base.css  —  Layout and structure styles shared by all themes.
+   Theme-specific colors (backgrounds, text, accents) live in
+   static/css/themes/light.css and static/css/themes/dark.css.
+   ============================================================ */
+
+/* ----- Reset & box model ----- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ----- Site header ----- */
+.site-header {
+  padding: 2rem 1.5rem 1rem;
+  text-align: center;
+}
+
+.header-name {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header-tagline {
+  font-size: 1.05rem;
+  margin-top: 0.25rem;
+  opacity: 0.8;
+}
+
+/* ----- Navigation ----- */
+.site-nav {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ----- Main content area ----- */
+.site-main {
+  flex: 1;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ----- Generic section spacing ----- */
+.section {
+  margin-bottom: 3.5rem;
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid;
+}
+
+/* ----- About section ----- */
+.about-text {
+  font-size: 1.05rem;
+}
+
+.about-text p + p {
+  margin-top: 1rem;
+}
+
+/* ----- Project grid ----- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.75rem;
+}
+
+/* ----- Project card ----- */
+.project-card {
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
+}
+
+.project-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.project-summary {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* ----- Tech stack badges ----- */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tech-badge {
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* ----- Collapsible project details ----- */
+.project-details {
+  font-size: 0.9rem;
+}
+
+.project-details summary {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.25rem 0;
+  list-style: none;
+}
+
+.project-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-details summary::before {
+  content: "▶  ";
+  font-size: 0.7em;
+}
+
+details[open] summary::before {
+  content: "▼  ";
+}
+
+.detail-block {
+  margin-top: 0.75rem;
+}
+
+.detail-block h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+/* ----- Project link buttons ----- */
+.project-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: opacity 0.15s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+/* ----- Contact section ----- */
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.98rem;
+}
+
+.contact-label {
+  font-weight: 600;
+  margin-right: 0.4rem;
+}
+
+/* ----- Footer ----- */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ----- Responsive tweaks ----- */
+@media (max-width: 500px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .header-name {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeke the Wonder Dog | Data Science Portfolio</title>
+
+  <!-- Base styles always loaded -->
+  <link rel="stylesheet" href="css/base.css" />
+
+  <!-- Theme stylesheet — controlled by `theme` in portfolio_config.yaml -->
+  <link rel="stylesheet" href="css/themes/msu-dark.css" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-name">Zeke the Wonder Dog</div>
+      <div class="header-tagline">Aspiring Data Scientist | MSU Mascot | Good Boy</div>
+    </div>
+
+    <!-- Navigation bar -->
+    <nav class="site-nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== Main content (filled in by child templates) ===== -->
+  <main class="site-main">
+    
+
+<!-- ===== About section ===== -->
+<section id="about" class="section about-section">
+  <h2>About Me</h2>
+  <div class="about-text"><p>I'm a red English lab and one of Michigan State's beloved mascots, but
+data science is my true calling. When I'm not leading the Spartans onto
+the field, I'm wrangling datasets and building predictive models —
+mostly with my nose, occasionally with my paws.  </p>
+<p>My projects focus on turning complex data into clear insights that
+<em>any human (or dog) can act on</em>. I believe the best analysis is one
+that fits on a single slide and can be explained to someone who just
+woke up from a nap in the sun. Go Green.</p>
+<p><em>This example portfolio was inspired by Zeke IV, who passed in March of 2026.
+He played the role of Zeke the Wonder Dog for a decade.</em></p></div>
+</section>
+
+<!-- ===== Projects section ===== -->
+<section id="projects" class="section projects-section">
+  <h2>Projects</h2>
+
+  <div class="project-grid">
+    
+    <article class="project-card">
+
+      <!-- Project thumbnail image -->
+      <div class="project-image-wrapper">
+        <img
+          src="img/placeholder_project_1.png"
+          alt="Thumbnail for Optimal Nap Spot Prediction Across Campus"
+          class="project-image"
+        />
+      </div>
+
+      <div class="project-body">
+        <h3 class="project-title">Optimal Nap Spot Prediction Across Campus</h3>
+
+        <!-- Short summary written for a non-expert audience -->
+        <p class="project-summary">Built a model to identify the best nap locations on MSU&#39;s campus based on sunlight exposure, foot traffic, grass quality, and proximity to food smells. Findings have been peer-reviewed by three other dogs and were described as &#34;life-changing&#34; and &#34;very good.&#34;
+</p>
+
+        <!-- Tech stack as pill badges -->
+        <div class="tech-stack">
+          
+          <span class="tech-badge">Python</span>
+          
+          <span class="tech-badge">scikit-learn</span>
+          
+          <span class="tech-badge">pandas</span>
+          
+          <span class="tech-badge">matplotlib</span>
+          
+          <span class="tech-badge">Jupyter Notebooks</span>
+          
+        </div>
+
+        <!-- Collapsible details (problem / approach / results) -->
+        <details class="project-details">
+          <summary>More details</summary>
+
+          <div class="detail-block">
+            <h4>Problem</h4>
+            <p>Finding a good nap spot is harder than it looks. Campus is large, conditions change throughout the day, and the best patches of sun move. A mascot operating on intuition alone wastes valuable resting time — a problem that affects productivity, morale, and tail-wagging rates across the entire campus community.
+</p>
+          </div>
+
+          <div class="detail-block">
+            <h4>Approach</h4>
+            <p>Collected location data across 47 candidate nap sites over a full academic semester. Features included average daily sunlight (hours), grass softness score (1–10, assessed manually), nearby food-cart proximity, and pedestrian traffic by hour. Trained a gradient boosting classifier to predict a site&#39;s &#34;nap quality&#34; rating and used SHAP values to explain which features mattered most.
+</p>
+          </div>
+
+          <div class="detail-block">
+            <h4>Results &amp; Impact</h4>
+            <p>The model achieved 89% accuracy on held-out test sites. Sunlight duration and grass softness were the top two predictive features, while proximity to the student union food court provided a meaningful but secondary boost. A ranked list of top-10 nap sites was distributed to the campus dog community and has since been downloaded 847 times.
+</p>
+          </div>
+        </details>
+
+        <!-- Links to the GitHub repo and notebook -->
+        <div class="project-links">
+          
+          <a href="https://github.com/zeke-wonder-dog/nap-spot-predictor" target="_blank" rel="noopener" class="btn btn-repo">
+            View Repo
+          </a>
+          
+          
+          <a href="https://github.com/zeke-wonder-dog/nap-spot-predictor/blob/main/analysis.ipynb" target="_blank" rel="noopener" class="btn btn-notebook">
+            View Notebook
+          </a>
+          
+        </div>
+      </div>
+
+    </article>
+    
+    <article class="project-card">
+
+      <!-- Project thumbnail image -->
+      <div class="project-image-wrapper">
+        <img
+          src="img/placeholder_project_2.png"
+          alt="Thumbnail for Spartan Football Crowd Cheer Analysis"
+          class="project-image"
+        />
+      </div>
+
+      <div class="project-body">
+        <h3 class="project-title">Spartan Football Crowd Cheer Analysis</h3>
+
+        <!-- Short summary written for a non-expert audience -->
+        <p class="project-summary">Analyzed audio and attendance data from Spartan Stadium to understand what game events drive the loudest crowd reactions. Results were used to help the athletics department optimize in-game entertainment and — personally — to determine the exact moments when I should run onto the field for maximum dramatic effect.
+</p>
+
+        <!-- Tech stack as pill badges -->
+        <div class="tech-stack">
+          
+          <span class="tech-badge">Python</span>
+          
+          <span class="tech-badge">pandas</span>
+          
+          <span class="tech-badge">seaborn</span>
+          
+          <span class="tech-badge">Plotly</span>
+          
+          <span class="tech-badge">Jupyter Notebooks</span>
+          
+        </div>
+
+        <!-- Collapsible details (problem / approach / results) -->
+        <details class="project-details">
+          <summary>More details</summary>
+
+          <div class="detail-block">
+            <h4>Problem</h4>
+            <p>Fan energy is contagious, but it is also unpredictable. The athletics department wanted to know which in-game events (touchdowns, turnovers, big defensive stops, walk-up music choices) produced the biggest crowd reactions — and whether the pattern differed by opponent, weather, or game time. As the mascot, I had strong professional interest in this question.
+</p>
+          </div>
+
+          <div class="detail-block">
+            <h4>Approach</h4>
+            <p>Combined play-by-play game data with decibel readings from stadium microphones across three seasons (~36 home games). Engineered features for score differential, down-and-distance, quarter, temperature, and opponent rank. Produced interactive Plotly dashboards that let non-technical staff filter by season and event type to explore crowd response patterns on their own.
+</p>
+          </div>
+
+          <div class="detail-block">
+            <h4>Results &amp; Impact</h4>
+            <p>Defensive turnovers produced the loudest average crowd response — louder even than touchdowns — especially when MSU was trailing. Walk-up music selections in the 3rd quarter showed a statistically significant effect on cheer volume for games decided by fewer than 10 points. The athletics team used these findings to redesign the third-quarter entertainment package for the following season. I was given extra treats for my contributions.
+</p>
+          </div>
+        </details>
+
+        <!-- Links to the GitHub repo and notebook -->
+        <div class="project-links">
+          
+          <a href="https://github.com/zeke-wonder-dog/spartan-cheer-analysis" target="_blank" rel="noopener" class="btn btn-repo">
+            View Repo
+          </a>
+          
+          
+          <a href="https://github.com/zeke-wonder-dog/spartan-cheer-analysis/blob/main/cheer_analysis.ipynb" target="_blank" rel="noopener" class="btn btn-notebook">
+            View Notebook
+          </a>
+          
+        </div>
+      </div>
+
+    </article>
+    
+  </div>
+</section>
+
+<!-- ===== Contact section ===== -->
+<section id="contact" class="section contact-section">
+  <h2>Contact</h2>
+  <ul class="contact-list">
+    
+    <li>
+      <span class="contact-label">Email:</span>
+      <a href="mailto:zeke@msu.edu">zeke@msu.edu</a>
+    </li>
+    
+    
+    <li>
+      <span class="contact-label">LinkedIn:</span>
+      <a href="https://www.linkedin.com/in/zeke-the-wonder-dog" target="_blank" rel="noopener">https://www.linkedin.com/in/zeke-the-wonder-dog</a>
+    </li>
+    
+    
+    <li>
+      <span class="contact-label">GitHub:</span>
+      <a href="https://github.com/zeke-wonder-dog" target="_blank" rel="noopener">https://github.com/zeke-wonder-dog</a>
+    </li>
+    
+  </ul>
+</section>
+
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <p>Built with the Data Science Portfolio Template &mdash; powered by Python &amp; Jinja2.</p>
+  </footer>
+
+</body>
+</html>
