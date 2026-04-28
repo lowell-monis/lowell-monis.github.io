@@ -1,0 +1,16 @@
+:root {
+  --bg:            #ffffff;
+  --bg-2:          #f5f5f3;
+  --bg-3:          #ebebeb;
+  --text:          #0a0a0a;
+  --text-2:        #444440;
+  --text-3:        #888884;
+  --accent:        #0a0a0a;
+  --accent-inv:    #ffffff;
+  --border:        rgba(0,0,0,0.10);
+  --border-strong: rgba(0,0,0,0.18);
+  --badge-bg:      #0a0a0a;
+  --badge-text:    #ffffff;
+  --card-bg:       #ffffff;
+  --header-bg:     rgba(255,255,255,0.92);
+}

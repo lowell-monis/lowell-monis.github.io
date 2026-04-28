@@ -1,239 +1,325 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="editorial-dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zeke the Wonder Dog | Data Science Portfolio</title>
-
-  <!-- Base styles always loaded -->
+  <title>Lowell Monis | Data Science Portfolio</title>
   <link rel="stylesheet" href="css/base.css" />
-
-  <!-- Theme stylesheet — controlled by `theme` in portfolio_config.yaml -->
-  <link rel="stylesheet" href="css/themes/msu-dark.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- ===== Header ===== -->
+  <div id="particles-js"></div>
+
   <header class="site-header">
     <div class="header-inner">
-      <div class="header-name">Zeke the Wonder Dog</div>
-      <div class="header-tagline">Aspiring Data Scientist | MSU Mascot | Good Boy</div>
+      <span class="wordmark">Lowell Monis</span>
+      <nav class="site-nav">
+        <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="toggle-btn" id="theme-toggle" aria-label="Toggle theme">
+          <span class="toggle-dot"></span>
+          <span id="toggle-label">Dark</span>
+        </button>
+      </nav>
     </div>
-
-    <!-- Navigation bar -->
-    <nav class="site-nav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
-  <!-- ===== Main content (filled in by child templates) ===== -->
   <main class="site-main">
     
 
-<!-- ===== About section ===== -->
-<section id="about" class="section about-section">
-  <h2>About Me</h2>
-  <div class="about-text"><p>I'm a red English lab and one of Michigan State's beloved mascots, but
-data science is my true calling. When I'm not leading the Spartans onto
-the field, I'm wrangling datasets and building predictive models —
-mostly with my nose, occasionally with my paws.  </p>
-<p>My projects focus on turning complex data into clear insights that
-<em>any human (or dog) can act on</em>. I believe the best analysis is one
-that fits on a single slide and can be explained to someone who just
-woke up from a nap in the sun. Go Green.</p>
-<p><em>This example portfolio was inspired by Zeke IV, who passed in March of 2026.
-He played the role of Zeke the Wonder Dog for a decade.</em></p></div>
-</section>
 
-<!-- ===== Projects section ===== -->
-<section id="projects" class="section projects-section">
-  <h2>Projects</h2>
-
-  <div class="project-grid">
-    
-    <article class="project-card">
-
-      <!-- Project thumbnail image -->
-      <div class="project-image-wrapper">
-        <img
-          src="img/placeholder_project_1.png"
-          alt="Thumbnail for Optimal Nap Spot Prediction Across Campus"
-          class="project-image"
-        />
+<div class="hero-section section" id="hero">
+  <div class="hero">
+    <div class="hero-content">
+      <p class="hero-label">Data Scientist &middot; Michigan State University</p>
+      <h1 class="hero-name">Lowell Monis</h1>
+      
+      <p class="hero-current-role">Researcher · JimLab, MSU College of Human Medicine</p>
+      
+      
+      <p class="hero-headline">Turning data into decisions.</p>
+      
+      <p class="hero-tagline">Data Science | Public Policy + Methods | Computational Math + Stats</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-solid">View Projects</a>
+        
+        <a href="https://github.com/lowell-monis" class="btn btn-ghost" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        
       </div>
+    </div>
+    
+    <img class="hero-headshot" src="img/headshot.jpg" alt="Lowell Monis" />
+    
+  </div>
+</div>
 
-      <div class="project-body">
+
+<section id="projects" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Selected Work</span>
+      <span class="section-count">02 Projects</span>
+    </div>
+    <div class="project-grid">
+      
+      
+      <article class="project-card">
+        
+        <img class="project-thumb" src="img/placeholder_project_1.png" alt="Optimal Nap Spot Prediction Across Campus" />
+        
+        <div class="project-card-meta">
+          <span class="project-index">01</span>
+        </div>
         <h3 class="project-title">Optimal Nap Spot Prediction Across Campus</h3>
-
-        <!-- Short summary written for a non-expert audience -->
         <p class="project-summary">Built a model to identify the best nap locations on MSU&#39;s campus based on sunlight exposure, foot traffic, grass quality, and proximity to food smells. Findings have been peer-reviewed by three other dogs and were described as &#34;life-changing&#34; and &#34;very good.&#34;
 </p>
-
-        <!-- Tech stack as pill badges -->
         <div class="tech-stack">
-          
-          <span class="tech-badge">Python</span>
-          
-          <span class="tech-badge">scikit-learn</span>
-          
-          <span class="tech-badge">pandas</span>
-          
-          <span class="tech-badge">matplotlib</span>
-          
-          <span class="tech-badge">Jupyter Notebooks</span>
-          
+          <span class="tech-tag">Python</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">pandas</span><span class="tech-tag">matplotlib</span><span class="tech-tag">Jupyter Notebooks</span>
         </div>
-
-        <!-- Collapsible details (problem / approach / results) -->
+        
         <details class="project-details">
           <summary>More details</summary>
-
-          <div class="detail-block">
-            <h4>Problem</h4>
-            <p>Finding a good nap spot is harder than it looks. Campus is large, conditions change throughout the day, and the best patches of sun move. A mascot operating on intuition alone wastes valuable resting time — a problem that affects productivity, morale, and tail-wagging rates across the entire campus community.
-</p>
-          </div>
-
-          <div class="detail-block">
-            <h4>Approach</h4>
-            <p>Collected location data across 47 candidate nap sites over a full academic semester. Features included average daily sunlight (hours), grass softness score (1–10, assessed manually), nearby food-cart proximity, and pedestrian traffic by hour. Trained a gradient boosting classifier to predict a site&#39;s &#34;nap quality&#34; rating and used SHAP values to explain which features mattered most.
-</p>
-          </div>
-
-          <div class="detail-block">
-            <h4>Results &amp; Impact</h4>
-            <p>The model achieved 89% accuracy on held-out test sites. Sunlight duration and grass softness were the top two predictive features, while proximity to the student union food court provided a meaningful but secondary boost. A ranked list of top-10 nap sites was distributed to the campus dog community and has since been downloaded 847 times.
-</p>
-          </div>
+          
+          <div class="detail-block"><h4>Problem</h4><p>Finding a good nap spot is harder than it looks. Campus is large, conditions change throughout the day, and the best patches of sun move. A mascot operating on intuition alone wastes valuable resting time — a problem that affects productivity, morale, and tail-wagging rates across the entire campus community.
+</p></div>
+          
+          
+          <div class="detail-block"><h4>Approach</h4><p>Collected location data across 47 candidate nap sites over a full academic semester. Features included average daily sunlight (hours), grass softness score (1–10, assessed manually), nearby food-cart proximity, and pedestrian traffic by hour. Trained a gradient boosting classifier to predict a site&#39;s &#34;nap quality&#34; rating and used SHAP values to explain which features mattered most.
+</p></div>
+          
+          
+          <div class="detail-block"><h4>Results &amp; Impact</h4><p>The model achieved 89% accuracy on held-out test sites. Sunlight duration and grass softness were the top two predictive features, while proximity to the student union food court provided a meaningful but secondary boost. A ranked list of top-10 nap sites was distributed to the campus dog community and has since been downloaded 847 times.
+</p></div>
+          
         </details>
-
-        <!-- Links to the GitHub repo and notebook -->
+        
         <div class="project-links">
           
-          <a href="https://github.com/zeke-wonder-dog/nap-spot-predictor" target="_blank" rel="noopener" class="btn btn-repo">
-            View Repo
+          <a href="https://github.com/zeke-wonder-dog/nap-spot-predictor" class="btn btn-solid btn-sm" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i> Repo
           </a>
           
           
-          <a href="https://github.com/zeke-wonder-dog/nap-spot-predictor/blob/main/analysis.ipynb" target="_blank" rel="noopener" class="btn btn-notebook">
-            View Notebook
+          <a href="https://github.com/zeke-wonder-dog/nap-spot-predictor/blob/main/analysis.ipynb" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+            <i class="fas fa-book-open"></i> Notebook
           </a>
           
         </div>
-      </div>
-
-    </article>
-    
-    <article class="project-card">
-
-      <!-- Project thumbnail image -->
-      <div class="project-image-wrapper">
-        <img
-          src="img/placeholder_project_2.png"
-          alt="Thumbnail for Spartan Football Crowd Cheer Analysis"
-          class="project-image"
-        />
-      </div>
-
-      <div class="project-body">
+      </article>
+      
+      
+      <article class="project-card">
+        
+        <img class="project-thumb" src="img/placeholder_project_2.png" alt="Spartan Football Crowd Cheer Analysis" />
+        
+        <div class="project-card-meta">
+          <span class="project-index">02</span>
+        </div>
         <h3 class="project-title">Spartan Football Crowd Cheer Analysis</h3>
-
-        <!-- Short summary written for a non-expert audience -->
         <p class="project-summary">Analyzed audio and attendance data from Spartan Stadium to understand what game events drive the loudest crowd reactions. Results were used to help the athletics department optimize in-game entertainment and — personally — to determine the exact moments when I should run onto the field for maximum dramatic effect.
 </p>
-
-        <!-- Tech stack as pill badges -->
         <div class="tech-stack">
-          
-          <span class="tech-badge">Python</span>
-          
-          <span class="tech-badge">pandas</span>
-          
-          <span class="tech-badge">seaborn</span>
-          
-          <span class="tech-badge">Plotly</span>
-          
-          <span class="tech-badge">Jupyter Notebooks</span>
-          
+          <span class="tech-tag">Python</span><span class="tech-tag">pandas</span><span class="tech-tag">seaborn</span><span class="tech-tag">Plotly</span><span class="tech-tag">Jupyter Notebooks</span>
         </div>
-
-        <!-- Collapsible details (problem / approach / results) -->
+        
         <details class="project-details">
           <summary>More details</summary>
-
-          <div class="detail-block">
-            <h4>Problem</h4>
-            <p>Fan energy is contagious, but it is also unpredictable. The athletics department wanted to know which in-game events (touchdowns, turnovers, big defensive stops, walk-up music choices) produced the biggest crowd reactions — and whether the pattern differed by opponent, weather, or game time. As the mascot, I had strong professional interest in this question.
-</p>
-          </div>
-
-          <div class="detail-block">
-            <h4>Approach</h4>
-            <p>Combined play-by-play game data with decibel readings from stadium microphones across three seasons (~36 home games). Engineered features for score differential, down-and-distance, quarter, temperature, and opponent rank. Produced interactive Plotly dashboards that let non-technical staff filter by season and event type to explore crowd response patterns on their own.
-</p>
-          </div>
-
-          <div class="detail-block">
-            <h4>Results &amp; Impact</h4>
-            <p>Defensive turnovers produced the loudest average crowd response — louder even than touchdowns — especially when MSU was trailing. Walk-up music selections in the 3rd quarter showed a statistically significant effect on cheer volume for games decided by fewer than 10 points. The athletics team used these findings to redesign the third-quarter entertainment package for the following season. I was given extra treats for my contributions.
-</p>
-          </div>
+          
+          <div class="detail-block"><h4>Problem</h4><p>Fan energy is contagious, but it is also unpredictable. The athletics department wanted to know which in-game events (touchdowns, turnovers, big defensive stops, walk-up music choices) produced the biggest crowd reactions — and whether the pattern differed by opponent, weather, or game time. As the mascot, I had strong professional interest in this question.
+</p></div>
+          
+          
+          <div class="detail-block"><h4>Approach</h4><p>Combined play-by-play game data with decibel readings from stadium microphones across three seasons (~36 home games). Engineered features for score differential, down-and-distance, quarter, temperature, and opponent rank. Produced interactive Plotly dashboards that let non-technical staff filter by season and event type to explore crowd response patterns on their own.
+</p></div>
+          
+          
+          <div class="detail-block"><h4>Results &amp; Impact</h4><p>Defensive turnovers produced the loudest average crowd response — louder even than touchdowns — especially when MSU was trailing. Walk-up music selections in the 3rd quarter showed a statistically significant effect on cheer volume for games decided by fewer than 10 points. The athletics team used these findings to redesign the third-quarter entertainment package for the following season. I was given extra treats for my contributions.
+</p></div>
+          
         </details>
-
-        <!-- Links to the GitHub repo and notebook -->
+        
         <div class="project-links">
           
-          <a href="https://github.com/zeke-wonder-dog/spartan-cheer-analysis" target="_blank" rel="noopener" class="btn btn-repo">
-            View Repo
+          <a href="https://github.com/zeke-wonder-dog/spartan-cheer-analysis" class="btn btn-solid btn-sm" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i> Repo
           </a>
           
           
-          <a href="https://github.com/zeke-wonder-dog/spartan-cheer-analysis/blob/main/cheer_analysis.ipynb" target="_blank" rel="noopener" class="btn btn-notebook">
-            View Notebook
+          <a href="https://github.com/zeke-wonder-dog/spartan-cheer-analysis/blob/main/cheer_analysis.ipynb" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+            <i class="fas fa-book-open"></i> Notebook
           </a>
           
         </div>
-      </div>
-
-    </article>
-    
+      </article>
+      
+    </div>
   </div>
 </section>
 
-<!-- ===== Contact section ===== -->
-<section id="contact" class="section contact-section">
-  <h2>Contact</h2>
-  <ul class="contact-list">
-    
-    <li>
-      <span class="contact-label">Email:</span>
-      <a href="mailto:zeke@msu.edu">zeke@msu.edu</a>
-    </li>
-    
-    
-    <li>
-      <span class="contact-label">LinkedIn:</span>
-      <a href="https://www.linkedin.com/in/zeke-the-wonder-dog" target="_blank" rel="noopener">https://www.linkedin.com/in/zeke-the-wonder-dog</a>
-    </li>
-    
-    
-    <li>
-      <span class="contact-label">GitHub:</span>
-      <a href="https://github.com/zeke-wonder-dog" target="_blank" rel="noopener">https://github.com/zeke-wonder-dog</a>
-    </li>
-    
-  </ul>
+
+
+<section id="journey" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Career Journey</span>
+    </div>
+    <div class="branch-timeline">
+      
+      <div class="branch-item">
+        <div class="branch-node"></div>
+        <div class="branch-meta">
+          <span class="branch-period">2021 – 2022</span>
+          
+          
+        </div>
+        <p class="branch-role">Data Science Intern</p>
+        <p class="branch-org">Delta Dental of Michigan</p>
+        <p class="branch-desc">Engineered ETL pipelines for Medicaid claims data; built dashboards and automated reporting workflows used by the analytics team.
+</p>
+      </div>
+      
+      <div class="branch-item">
+        <div class="branch-node status-current"></div>
+        <div class="branch-meta">
+          <span class="branch-period">2022 – Present</span>
+          <span class="branch-badge">Current</span>
+          
+        </div>
+        <p class="branch-role">Researcher</p>
+        <p class="branch-org">JimLab, MSU Dept. of Epidemiology &amp; Biostatistics</p>
+        <p class="branch-desc">Developing Bayesian hierarchical models to study drug use epidemiology under Dr. Jim Anthony at the MSU College of Human Medicine.
+</p>
+      </div>
+      
+      <div class="branch-item">
+        <div class="branch-node status-current"></div>
+        <div class="branch-meta">
+          <span class="branch-period">2023 – Present</span>
+          <span class="branch-badge">Current</span>
+          
+        </div>
+        <p class="branch-role">B.S. Computational Mathematics, Science &amp; Engineering</p>
+        <p class="branch-org">Michigan State University</p>
+        <p class="branch-desc">Dual focus on statistical learning and public policy methods. Expected graduation 2025.
+</p>
+      </div>
+      
+      <div class="branch-item">
+        <div class="branch-node status-next"></div>
+        <div class="branch-meta">
+          <span class="branch-period">Summer 2025</span>
+          
+          <span class="branch-badge badge-next">Next</span>
+        </div>
+        <p class="branch-role">Data Science / ML Engineering Role</p>
+        <p class="branch-org">Next Opportunity</p>
+        <p class="branch-desc">Actively seeking full-time or internship positions in data science, machine learning engineering, or quantitative research.
+</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+<section id="about" class="section section-alt">
+  <div class="section-inner">
+    <div class="about-grid">
+      <span class="section-label">About</span>
+      <div class="about-text"><p>I am a Data Scientist trained at Michigan State University with a passion for
+leveraging statistical learning to address complex public policy and public health challenges.
+My experience ranges from engineering ETL pipelines for Medicaid claims at Delta Dental
+to developing Bayesian hierarchical models in epidemiology. I have a proven track record of
+building end-to-end machine learning solutions leveraging Python and R while maintaining
+clean systems for package management and data extraction via Git, SQL, and NoSQL tools,
+and I am particularly seeking roles where I can apply my background in data engineering
+and predictive modeling to drive actionable business insights.</p>
+<p>I am currently a Researcher with the <a href="https://epibio.msu.edu/research/jimlab/index.html">JimLab led by Dr. Jim Anthony</a> at the
+Department of Epidemiology and Biostatistics at the MSU College of Human Medicine.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Get in Touch</span>
+    </div>
+    <form class="contact-form" id="contact-form" data-email="monislow@msu.edu" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" placeholder="your@email.com" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" placeholder="What would you like to discuss?" required></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-solid">Send Message</button>
+      </div>
+      <p class="form-note">Opens your default email client with the message pre-filled.</p>
+    </form>
+  </div>
 </section>
 
 
   </main>
 
-  <!-- ===== Footer ===== -->
   <footer class="site-footer">
-    <p>Built with the Data Science Portfolio Template &mdash; powered by Python &amp; Jinja2.</p>
+    <div class="footer-main">
+      <span class="footer-copy">&copy; Lowell Monis</span>
+      <div class="footer-social">
+        
+        <a href="https://github.com/lowell-monis" target="_blank" rel="noopener" title="GitHub">
+          <i class="fab fa-github"></i><span class="social-label">GitHub</span>
+        </a>
+        
+        
+        <a href="https://www.linkedin.com/in/lowell-monis" target="_blank" rel="noopener" title="LinkedIn">
+          <i class="fab fa-linkedin"></i><span class="social-label">LinkedIn</span>
+        </a>
+        
+        
+        <a href="https://instagram.com/lowell.monis" target="_blank" rel="noopener" title="Instagram">
+          <i class="fab fa-instagram"></i><span class="social-label">Instagram</span>
+        </a>
+        
+        
+        <a href="mailto:monislow@msu.edu" title="Email">
+          <i class="fas fa-envelope"></i><span class="social-label">Email</span>
+        </a>
+        
+      </div>
+    </div>
+    <div class="footer-credit-bar">
+      <span class="footer-credit">
+        Adapted from the <a href="https://github.com/devinsilvia/professional_portfolio_template" target="_blank" rel="noopener">Data Science Portfolio Template</a>
+        &mdash; powered by
+        <a href="https://www.python.org/" target="_blank" rel="noopener">Python</a>,
+        <a href="https://jinja.palletsprojects.com/" target="_blank" rel="noopener">Jinja2</a>,
+        <a href="https://yaml.org/" target="_blank" rel="noopener">YAML</a>,
+        <a href="https://python-markdown.github.io/" target="_blank" rel="noopener">Markdown</a>,
+        <a href="https://vincentgarreau.com/particles.js/" target="_blank" rel="noopener">particles.js</a>
+        &amp; <a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a>
+      </span>
+    </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
