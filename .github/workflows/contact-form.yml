@@ -1,0 +1,27 @@
+name: Contact Form
+
+on:
+  repository_dispatch:
+    types: [contact-form-submission]
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Send email
+        env:
+          SMTP_USER:       ${{ secrets.SMTP_USER }}
+          SMTP_PASS:       ${{ secrets.SMTP_PASS }}
+          SMTP_HOST:       ${{ secrets.SMTP_HOST }}
+          SMTP_PORT:       ${{ secrets.SMTP_PORT }}
+          TO_EMAIL:        ${{ secrets.TO_EMAIL }}
+          SENDER_NAME:     ${{ github.event.client_payload.name }}
+          SENDER_EMAIL:    ${{ github.event.client_payload.email }}
+          SENDER_MESSAGE:  ${{ github.event.client_payload.message }}
+        run: python send_contact_email.py

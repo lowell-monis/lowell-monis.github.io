@@ -2,105 +2,384 @@
 
 {% block content %}
 
-<!-- ===== About section ===== -->
-<section id="about" class="section about-section">
-  <h2>About Me</h2>
-  <div class="about-text">{{ student.about | safe }}</div>
-</section>
-
-<!-- ===== Projects section ===== -->
-<section id="projects" class="section projects-section">
-  <h2>Projects</h2>
-
-  <div class="project-grid">
-    {% for project in projects %}
-    <article class="project-card">
-
-      <!-- Project thumbnail image -->
-      <div class="project-image-wrapper">
-        <img
-          src="{{ project.image_path }}"
-          alt="Thumbnail for {{ project.title }}"
-          class="project-image"
-        />
+{# ── Hero ──────────────────────────────────────────────────── #}
+<div class="hero-section section" id="hero">
+  <div class="hero">
+    <div class="hero-content">
+      <p class="hero-label">{{ student.role or "Data Scientist" }} &middot; Michigan State University</p>
+      <h1 class="hero-name">{{ student.name }}</h1>
+      {% if student.current_role %}
+      <p class="hero-current-role">{{ student.current_role }}</p>
+      {% endif %}
+      {% if student.headline %}
+      <p class="hero-headline">{{ student.headline }}</p>
+      {% endif %}
+      <p class="hero-tagline">{{ student.tagline }}</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-solid">View Projects</a>
+        {% if student.github %}
+        <a href="{{ student.github }}" class="btn btn-ghost" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        {% endif %}
       </div>
+    </div>
+    {% if student.headshot %}
+    <div class="photo-wrap">
+      <img class="hero-headshot" src="{{ student.headshot }}" alt="{{ student.name }}" />
+    </div>
+    {% endif %}
+  </div>
+</div>
 
-      <div class="project-body">
-        <h3 class="project-title">{{ project.title }}</h3>
+{# ── What I Bring ──────────────────────────────────────────── #}
+{% if student.what_i_bring %}
+<section id="skills" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">What I Bring</span>
+    </div>
+    {% if student.what_i_bring_intro %}
+    <p class="skills-intro">{{ student.what_i_bring_intro }}</p>
+    {% endif %}
+    <div class="skills-grid">
+      {% for skill in student.what_i_bring %}
+      <span class="skill-pill">{{ skill }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
 
-        <!-- Short summary written for a non-expert audience -->
-        <p class="project-summary">{{ project.short_summary }}</p>
-
-        <!-- Tech stack as pill badges -->
-        <div class="tech-stack">
-          {% for tech in project.tech_stack %}
-          <span class="tech-badge">{{ tech }}</span>
-          {% endfor %}
+{# ── News & Updates ────────────────────────────────────────── #}
+{% if student.news %}
+<section id="news" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">News &amp; Updates</span>
+    </div>
+    <div class="news-grid">
+      <div class="news-col">
+        <div class="news-frame">
+          <div class="news-items">
+            {% for item in student.news %}
+            <div class="news-item">
+              <span class="news-date">{{ item.date }}</span>
+              <p class="news-text">{{ item.text }}</p>
+            </div>
+            {% endfor %}
+          </div>
         </div>
+      </div>
+      <div class="news-linkedin">
+        <div class="linkedin-card">
+          <div class="linkedin-card-header">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn Activity</span>
+          </div>
+          <div class="linkedin-embed">
+            <iframe
+              src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7447675029158318081?collapsed=1"
+              height="300" width="100%" frameborder="0" allowfullscreen=""
+              title="Embedded post"></iframe>
+          </div>
+          {% if student.linkedin %}
+          <a href="{{ student.linkedin }}" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i> Follow on LinkedIn
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
 
-        <!-- Collapsible details (problem / approach / results) -->
+{# ── Career Journey ────────────────────────────────────────── #}
+{% if student.journey %}
+<section id="journey" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Career Journey</span>
+    </div>
+    <div class="branch-timeline">
+      {% for item in student.journey %}
+      <div class="branch-item">
+        <div class="branch-node{% if item.status == 'current' %} status-current{% elif item.status == 'next' %} status-next{% elif item.status == 'incoming' %} status-incoming{% endif %}"></div>
+        <div class="branch-meta">
+          <span class="branch-period">{{ item.period }}</span>
+          {% if item.status == "current" %}<span class="branch-badge">Current</span>{% endif %}
+          {% if item.status == "next" %}<span class="branch-badge badge-next">Next</span>{% endif %}
+          {% if item.status == "incoming" %}<span class="branch-badge badge-incoming">Incoming</span>{% endif %}
+        </div>
+        <p class="branch-role">{{ item.role }}</p>
+        <div class="branch-org-row">
+          {% if item.logo %}<img class="branch-org-logo" src="{{ item.logo }}" alt="{{ item.organization }}" />{% endif %}
+          <span class="branch-org">{{ item.organization }}</span>
+        </div>
+        {% if item.description %}<p class="branch-desc">{{ item.description }}</p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ── Projects ──────────────────────────────────────────────── #}
+<section id="projects" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Selected Work</span>
+    </div>
+    <div class="project-grid">
+      {% for project in projects %}
+      {% set img_type = project.image_type if project.image_type else "icon" %}
+      <article class="project-card{% if img_type == 'banner' %} has-banner{% endif %}">
+        {% if project.image_path %}
+        <div class="project-thumb-wrap">
+          <img class="project-thumb" src="{{ project.image_path }}" alt="{{ project.title }}" />
+        </div>
+        {% endif %}
+        <div class="project-card-meta">
+          <span class="project-index">{{ "%02d" % loop.index }}</span>
+        </div>
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-summary">{{ project.short_summary }}</p>
+        <div class="tech-stack">
+          {% for tech in project.tech_stack %}<span class="tech-tag">{{ tech }}</span>{% endfor %}
+        </div>
+        {% if project.problem_statement or project.approach or project.results_impact %}
         <details class="project-details">
           <summary>More details</summary>
-
-          <div class="detail-block">
-            <h4>Problem</h4>
-            <p>{{ project.problem_statement }}</p>
-          </div>
-
-          <div class="detail-block">
-            <h4>Approach</h4>
-            <p>{{ project.approach }}</p>
-          </div>
-
-          <div class="detail-block">
-            <h4>Results &amp; Impact</h4>
-            <p>{{ project.results_impact }}</p>
-          </div>
+          {% if project.problem_statement %}
+          <div class="detail-block"><h4>Problem</h4><p>{{ project.problem_statement }}</p></div>
+          {% endif %}
+          {% if project.approach %}
+          <div class="detail-block"><h4>Approach</h4><p>{{ project.approach }}</p></div>
+          {% endif %}
+          {% if project.results_impact %}
+          <div class="detail-block"><h4>Results &amp; Impact</h4><p>{{ project.results_impact }}</p></div>
+          {% endif %}
         </details>
-
-        <!-- Links to the GitHub repo and notebook -->
+        {% endif %}
         <div class="project-links">
           {% if project.repo_url %}
-          <a href="{{ project.repo_url }}" target="_blank" rel="noopener" class="btn btn-repo">
-            View Repo
+          <a href="{{ project.repo_url }}" class="btn btn-solid btn-sm" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i> Repo
+          </a>
+          {% endif %}
+          {% if project.dashboard_url %}
+          <a href="{{ project.dashboard_url }}" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+            <i class="fas fa-chart-bar"></i> Dashboard
           </a>
           {% endif %}
           {% if project.notebook_url %}
-          <a href="{{ project.notebook_url }}" target="_blank" rel="noopener" class="btn btn-notebook">
-            View Notebook
+          <a href="{{ project.notebook_url }}" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+            <i class="fas fa-book-open"></i> Notebook
+          </a>
+          {% endif %}
+          {% if project.report_url %}
+          <a href="{{ project.report_url }}" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+            <i class="fas fa-file-alt"></i> Report
           </a>
           {% endif %}
         </div>
-      </div>
-
-    </article>
-    {% endfor %}
+      </article>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
-<!-- ===== Contact section ===== -->
-<section id="contact" class="section contact-section">
-  <h2>Contact</h2>
-  <ul class="contact-list">
-    {% if student.email %}
-    <li>
-      <span class="contact-label">Email:</span>
-      <a href="mailto:{{ student.email }}">{{ student.email }}</a>
-    </li>
+{# ── About ─────────────────────────────────────────────────── #}
+<section id="about" class="section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-sidebar">
+        <span class="section-label">About</span>
+        {% set about_photo = student.about_photos[0] if student.about_photos else (student.about_photo or student.headshot) %}
+        {% if about_photo %}
+        <div class="photo-wrap about-photo-wrap"
+             {% if student.about_photos %}data-photos='{{ student.about_photos | tojson }}'{% endif %}>
+          <img class="about-headshot" src="{{ about_photo }}" alt="{{ student.name }}" />
+        </div>
+        {% endif %}
+      </div>
+      <div class="about-text">{{ student.about | safe }}</div>
+    </div>
+  </div>
+</section>
+
+{# ── Off the Record ───────────────────────────────────────── #}
+<section id="side-b" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Off the Record</span>
+    </div>
+
+    {# Top row: vinyl player + spotify #}
+    <div class="side-b-layout">
+
+      {# Vinyl player #}
+      <div class="vinyl-player-wrap">
+        <h3 class="side-b-sub">The Needle Drops</h3>
+        <div id="yt-player" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"></div>
+
+        <div class="turntable" id="vinyl-turntable" role="button"
+             aria-label="Play or pause That's Life by Frank Sinatra" tabindex="0">
+          <div class="turntable-platter"></div>
+          <div class="vinyl-record" id="vinyl-record">
+            <div class="vinyl-label">
+              <p class="vinyl-song">That's Life</p>
+              <p class="vinyl-artist">Frank Sinatra</p>
+            </div>
+          </div>
+          <div class="tone-arm-pivot"></div>
+          <div class="tone-arm-wrap" id="tone-arm-wrap">
+            <div class="tone-arm-shaft"></div>
+            <div class="tone-arm-head"></div>
+          </div>
+        </div>
+
+        <div class="vinyl-controls">
+          <button class="vinyl-btn" id="vinyl-btn" type="button">
+            <i class="fas fa-play" id="vinyl-icon"></i>
+            <span id="vinyl-play-label">Play</span>
+          </button>
+          <span class="vinyl-track-info">Frank Sinatra &middot; That's Life &middot; 1966</span>
+        </div>
+
+        <p class="vinyl-caption">
+          Click the record or the button to play &mdash; or just watch it spin.
+          This turntable is an interactive fidget. So is the
+          <a href="https://vincentgarreau.com/particles.js/" target="_blank" rel="noopener">particle network</a>
+          in the background &mdash;
+          <a href="https://vincentgarreau.com/particles.js/" target="_blank" rel="noopener">particles.js</a>
+          by <a href="https://github.com/VincentGarreau" target="_blank" rel="noopener">Vincent Garreau</a>.
+          Short attention spans welcome.
+        </p>
+      </div>
+
+      {# Spotify #}
+      <div class="spotify-wrap">
+        {% if student.spotify_playlist %}
+        <div class="spotify-embed">
+          <iframe data-testid="embed-iframe" style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/{{ student.spotify_playlist }}?utm_source=generator&amp;theme=0"
+            width="100%" height="500" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
+        {% endif %}
+
+        {% if student.coffee_order %}
+        <div class="coffee-card">
+          <span class="coffee-label"><i class="fas fa-mug-hot"></i> Current Order</span>
+          <p class="coffee-order">{{ student.coffee_order }}</p>
+        </div>
+        {% endif %}
+      </div>
+
+    </div>{# end side-b-layout #}
+
+    {# Bottom row: reading list + hobbies #}
+    {% if student.reading_list or student.hobbies %}
+    <div class="side-b-bottom">
+
+      {% if student.reading_list %}
+      <div>
+        <h3 class="side-b-sub">Bookshelf</h3>
+        <div class="reading-list">
+          {% for book in student.reading_list %}
+          <div class="reading-item">
+            {% if book.link %}
+            <a class="reading-title reading-title-link" href="{{ book.link }}" target="_blank" rel="noopener">{{ book.title }}</a>
+            {% else %}
+            <span class="reading-title">{{ book.title }}</span>
+            {% endif %}
+            <span class="reading-author">{{ book.author }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if student.hobbies %}
+      <div>
+        <h3 class="side-b-sub">Hobbies &amp; Interests</h3>
+        <div class="hobbies-grid">
+          {% for hobby in student.hobbies %}
+          <span class="hobby-pill">{{ hobby }}</span>
+          {% endfor %}
+        </div>
+        {% if student.hobbies_note %}
+        <p class="hobbies-note">{{ student.hobbies_note }}</p>
+        {% endif %}
+      </div>
+      {% endif %}
+
+    </div>
     {% endif %}
-    {% if student.linkedin %}
-    <li>
-      <span class="contact-label">LinkedIn:</span>
-      <a href="{{ student.linkedin }}" target="_blank" rel="noopener">{{ student.linkedin }}</a>
-    </li>
+
+    {# Involvement #}
+    {% if student.involvement %}
+    <div class="side-b-involvement">
+      <h3 class="side-b-sub">Campus Leadership</h3>
+      <div class="involvement-grid">
+        {% for org in student.involvement %}
+        <div class="involvement-card">
+          <div class="involvement-header">
+            {% if org.logo %}<img class="involvement-logo" src="{{ org.logo }}" alt="{{ org.name }}" />{% endif %}
+            <div>
+              <p class="involvement-name">{{ org.name }}</p>
+              <span class="involvement-role">{{ org.role }}</span>
+            </div>
+          </div>
+          {% if org.description %}<p class="involvement-desc">{{ org.description }}</p>{% endif %}
+          {% if org.url %}
+          <a href="{{ org.url }}" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+            <i class="fas fa-arrow-up-right-from-square"></i> Learn More
+          </a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
     {% endif %}
-    {% if student.github %}
-    <li>
-      <span class="contact-label">GitHub:</span>
-      <a href="{{ student.github }}" target="_blank" rel="noopener">{{ student.github }}</a>
-    </li>
-    {% endif %}
-  </ul>
+
+  </div>
+</section>
+
+{# ── Contact ───────────────────────────────────────────────── #}
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Get in Touch</span>
+    </div>
+    <form class="contact-form" id="contact-form"
+          data-email="{{ student.email }}"
+          data-endpoint="{{ student.form_endpoint or 'contact.php' }}"
+          {% if student.dispatch_token %}data-token="{{ student.dispatch_token }}"{% endif %}
+          novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" placeholder="your@email.com" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" placeholder="What would you like to discuss?" required></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-solid">Send Message</button>
+      </div>
+      <p class="form-status" id="form-status"></p>
+    </form>
+  </div>
 </section>
 
 {% endblock %}

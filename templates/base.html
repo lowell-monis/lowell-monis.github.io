@@ -1,42 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="{{ theme }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ site_title }}</title>
-
-  <!-- Base styles always loaded -->
+  <link rel="icon" href="img/favicon.png" />
   <link rel="stylesheet" href="css/base.css" />
-
-  <!-- Theme stylesheet — controlled by `theme` in portfolio_config.yaml -->
-  <link rel="stylesheet" href="css/themes/{{ theme }}.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- ===== Header ===== -->
+  <div id="particles-js"></div>
+
   <header class="site-header">
     <div class="header-inner">
-      <div class="header-name">{{ student.name }}</div>
-      <div class="header-tagline">{{ student.tagline }}</div>
+      <span class="wordmark">{{ student.name }}</span>
+      <nav class="site-nav">
+        <a href="#news">News</a>
+        <a href="#journey">Journey</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#side-b">Off the Record</a>
+        <a href="#contact">Contact</a>
+        <button class="toggle-btn" id="theme-toggle" aria-label="Toggle theme">
+          <span class="toggle-dot"></span>
+          <span id="toggle-label">Dark</span>
+        </button>
+      </nav>
     </div>
-
-    <!-- Navigation bar -->
-    <nav class="site-nav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
-  <!-- ===== Main content (filled in by child templates) ===== -->
   <main class="site-main">
     {% block content %}{% endblock %}
   </main>
 
-  <!-- ===== Footer ===== -->
   <footer class="site-footer">
-    <p>Built with the <a href="https://github.com/devinsilvia/professional_portfolio_template">Data Science Portfolio Template</a> &mdash; powered by Python &amp; Jinja2.</p>
+    <div class="footer-main">
+      <span class="footer-copy">&copy; {{ student.name }}</span>
+      <div class="footer-social">
+        {% if student.github %}
+        <a href="{{ student.github }}" target="_blank" rel="noopener" title="GitHub">
+          <i class="fab fa-github"></i><span class="social-label">GitHub</span>
+        </a>
+        {% endif %}
+        {% if student.linkedin %}
+        <a href="{{ student.linkedin }}" target="_blank" rel="noopener" title="LinkedIn">
+          <i class="fab fa-linkedin"></i><span class="social-label">LinkedIn</span>
+        </a>
+        {% endif %}
+        {% if student.instagram %}
+        <a href="{{ student.instagram }}" target="_blank" rel="noopener" title="Instagram">
+          <i class="fab fa-instagram"></i><span class="social-label">Instagram</span>
+        </a>
+        {% endif %}
+        {% if student.email %}
+        <a href="mailto:{{ student.email }}" title="Email">
+          <i class="fas fa-envelope"></i><span class="social-label">Email</span>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="footer-credit-bar">
+      <span class="footer-credit">
+        Adapted from the <a href="https://github.com/devinsilvia/professional_portfolio_template" target="_blank" rel="noopener">Data Science Portfolio Template</a>
+        &mdash; powered by
+        <a href="https://www.python.org/" target="_blank" rel="noopener">Python</a>,
+        <a href="https://jinja.palletsprojects.com/" target="_blank" rel="noopener">Jinja2</a>,
+        <a href="https://yaml.org/" target="_blank" rel="noopener">YAML</a>,
+        <a href="https://python-markdown.github.io/" target="_blank" rel="noopener">Markdown</a>,
+        <a href="https://vincentgarreau.com/particles.js/" target="_blank" rel="noopener">particles.js</a>
+        &amp; <a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a>.
+      </span>
+    </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
 
 </body>
 </html>

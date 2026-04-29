@@ -45,3 +45,4 @@ results_impact: >
 repo_url: "https://github.com/zeke-wonder-dog/nap-spot-predictor"
 notebook_url: "https://github.com/zeke-wonder-dog/nap-spot-predictor/blob/main/analysis.ipynb"
 image_path: "img/placeholder_project_1.png"
+image_type: "icon"   # "icon" (large square) or "banner" (full-width strip)

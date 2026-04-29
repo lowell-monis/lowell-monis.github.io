@@ -1,0 +1,54 @@
+# ============================================================
+# content/projects/dynamics.yaml
+# ============================================================
+
+title: "The Dynamics Behind Exchange Rates"
+
+short_summary: >
+  Analyzed 25 years of daily Euro exchange rate data across 15 currencies
+  to uncover macroeconomic patterns — from the 2008 financial crisis to the
+  Turkish lira collapse — and built a SARIMA model to forecast the EUR/USD
+  rate to within 0.7% of the actual value.
+
+tech_stack:
+  - Python
+  - pandas
+  - NumPy
+  - statsmodels
+  - pmdarima
+  - SciPy
+  - Plotly
+  - seaborn
+  - Jupyter Notebooks
+
+problem_statement: >
+  Exchange rate forecasting is a high-stakes problem for policymakers, investors,
+  and multinational businesses alike. Despite extensive prior research, accurately
+  predicting currency fluctuations remains difficult due to the non-stationary,
+  seasonal, and event-driven nature of the data. This project investigates the
+  EUR/USD rate specifically, asking: how many US dollars can you sell a Euro for
+  on April 15, 2024 — and can a time series model get us close?
+
+approach: >
+  Using a dataset of 6,500+ daily ECB exchange rates spanning 1999–2024 (Kaggle,
+  CC0), 15 economically significant currencies were selected for analysis. After
+  cleaning column names, handling non-stationary values via differencing, and
+  confirming stationarity with the Augmented Dickey-Fuller test, seasonal
+  decomposition confirmed strong periodicity in the EUR/USD series. ACF and PACF
+  analysis guided SARIMA parameter selection via auto_arima(), and a
+  SARIMAX(0,1,0)(0,1,0,52) model was fitted and used to forecast 100 days ahead.
+  Linear regression and residual analysis were also applied across all 15 currencies
+  to characterize their trend structures and identify outliers.
+
+results_impact: >
+  The SARIMA model predicted the April 15, 2024 EUR/USD rate at 1.0741 — within
+  0.7% of the Wall Street Journal's reported range of 1.0622–1.0667. The analysis
+  also surfaced interpretable macroeconomic signals: the EUR/USD peak around 2008
+  aligned precisely with the global financial crisis, and the sharp inflection in
+  the Turkish lira series pinpointed the onset of Turkey's 2018 economic crisis.
+  Correlation analysis revealed trade-aligned currency pairs (e.g., Indonesian
+  rupiah and South African rand) consistent with known bilateral relationships.
+
+notebook_url: "https://github.com/lowell-monis/dynamics-behind-exchange-rates/blob/main/predictive_analysis.ipynb"
+image_path: "img/dynamics.png"
+image_type: "banner"

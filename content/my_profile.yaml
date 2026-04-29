@@ -1,0 +1,221 @@
+# ============================================================
+# content/my_profile.yaml
+# ============================================================
+
+name: "Lowell Monis"
+role: "Data Engineer · Data Scientist · Policy Researcher"
+headline: "Writing narratives and deriving change through complete and accessible data solutions."
+current_role: "Incoming Data Engineering Intern · Tesla, Inc."
+tagline: "Open to 2027 new graduate roles in data science, data engineering, and machine learning."
+headshot: "img/headshot.jpg"
+about_photos:
+  - "img/drs_2024_present.jpg"
+  - "img/drs_2026_hc.jpg"
+  - "img/drs_2026_present.jpg"
+  - "img/panel.jpg"
+
+about: |
+  I am a data scientist and engineer trained at Michigan State University with a passion for
+  leveraging statistical learning to address complex public policy and public health challenges.
+  My experience ranges from engineering ETL pipelines for Medicaid claims at Delta Dental
+  to developing Bayesian hierarchical models in epidemiology. I have a proven track record of
+  building end-to-end machine learning solutions leveraging Python and R while maintaining
+  clean systems for package management and data extraction via Git, SQL, and NoSQL tools,
+  and I am particularly seeking roles where I can apply my background in data engineering
+  and predictive modeling to drive actionable business insights and social impact.
+
+  I am currently a Researcher with the [JimLab led by Dr. Jim Anthony](https://epibio.msu.edu/research/jimlab/index.html) at the
+  Department of Epidemiology and Biostatistics at the MSU College of Human Medicine. I will be starting an internship with the
+  Passive Safety Team in the Fremont Crash Lab at Tesla, Inc. in May 2026.
+
+what_i_bring_intro: >
+  I build end-to-end data solutions, from engineering reliable pipelines to communicating
+  findings that drive decisions. My work spans statistical modeling, machine learning, and
+  policy analysis, and I bring deep fluency across the full data lifecycle. I am an ardent
+  believer in communicable data science: storytelling is the most important part of the
+  lifecycle (even the actual model), and I am committed to making my work accessible and 
+  actionable for all audiences.
+
+what_i_bring:
+- "Python"
+- "R"
+- "SQL"
+- "Shell Scripting"
+- "C++"
+- "MATLAB"
+- "HTML/CSS/JavaScript"
+- "Git & Version Control"
+- "TeX/LaTeX"
+- "ETL Pipeline Engineering"
+- "NoSQL Databases"
+- "Amazon Web Services"
+- "Google Cloud"
+- "Environment Management"
+- "Reproducible Workflows"
+- "Bayesian Statistical Modeling"
+- "Machine Learning"
+- "Time Series Analysis"
+- "Natural Language Processing"
+- "NLTK"
+- "Experiment Design"
+- "Data Visualization"
+- "Data Storytelling and Communication"
+- "Tableau"
+- "Power BI"
+- "Streamlit"
+- "Plotly Dash"
+- "R Shiny"
+- "Microsoft Office Suite (Excel, PowerPoint, Word)"
+- "Data Ethics and Privacy"
+- "Responsible AI Practices"
+- "Epidemiology"
+- "Public Health Research"
+- "Public Policy Analysis"
+- "Political Text Analysis"
+- "Graph Theory and Network Analysis"
+- "End-to-end Project Management"
+
+news:
+  - date: "April 2026"
+    text: "Awarded the inaugural CMSE Academic Achievement Award for outstanding academic achievement and contributions to the department."
+  - date: "April 2025"
+    text: "Won a first place award for my poster presentation on the policy and political impact of demographic diversity in U.S. state legislatures at the 2026 MSU Undergraduate Research and Arts Forum."
+  - date: "March 2026"
+    text: "Incoming Data Engineering Intern at Tesla, starting May 2026."
+  - date: "December 2025"
+    text: "Commencing research at JimLab investigating drug use epidemiology with Bayesian hierarchical models."
+
+journey:
+  - period: "August 2023 – May 2027"
+    role: "B.S. Data Science"
+    organization: "Michigan State University"
+    logo: "img/msu.png"
+    status: "current"
+    description: >
+      Pursuing a Bachelor of Science in Data Science in the Honors College.
+      Focused on incorporating rigorous statistical methods and computational tools to address
+      real-world problems in public health and policy to maximize social impact.
+      Student in the Department of Computational Mathematics, Science, and Engineering (CMSE)
+      in the College of Natural Science.
+
+
+  - period: "Jan 2024 – Present"
+    role: "Research Assistant"
+    organization: "JimLab, MSU Dept. of Epidemiology & Biostatistics"
+    logo: "img/msu.png"
+    status: "current"
+    description: >
+      Developing Bayesian hierarchical models to study drug purchase
+      opportunities and drug use incidence under Dr. Jim Anthony.
+
+  - period: "Aug 2024 – Present"
+    role: "Supervisor & Learning Assistant"
+    organization: "Michigan State University"
+    logo: "img/msu.png"
+    status: "current"
+    description: >
+      Supervising a team of tutors at the Mathematics Learning Center
+      and serving as a learning assistant for multiple courses across departments.
+      Courses include: Introduction to Data Science and R,
+      College Algebra, Quantitative Literacy, Asian Politics,
+      and Data Analysis and Visualization for Politics.
+
+  - period: "Jun – Nov 2025"
+    role: "Data Science Intern"
+    organization: "Delta Dental of Michigan"
+    logo: "img/ddmi.png"
+    description: >
+      Engineered ETL pipelines for Medicaid claims data and built 
+      patient treatment progression pipelines. Conducted MCMC and cohort analysis
+      to inform business decisions and identify opportunities for improved care delivery.
+      Predicted provider churn using XGBoost and LightGBM models and communicated
+      findings via weekly standups.
+
+  - period: "May 2026"
+    role: "Data Engineering Intern"
+    organization: "Tesla, Inc. (Passive Safety Team, Crash Labs)"
+    logo: "img/tsla.png"
+    status: "incoming"
+    description: >
+      Incoming internship role. Details forthcoming.
+
+# ── Off the Record ───────────────────────────────────────────
+# Spotify playlist ID (from open.spotify.com/playlist/{ID})
+spotify_user: "o712g03hffc5aer2l2sa1o44a"
+spotify_playlist: "2jRW833R4kHBBU7HxtDpFL"
+
+# Current coffee order
+coffee_order: "Iced americano + 2 pumps of honey blend syrup + brown sugar cold foam"
+
+# Bookshelf — title, author, optional link
+reading_list:
+  - title: "The Prince"
+    author: "Niccolò Machiavelli (Mansfield tr.)"
+    link: "https://www.amazon.com/dp/0226500438"
+  - title: "If Anyone Builds It, Everyone Dies: Why Superhuman AI Would Kill Us All"
+    author: "Eliezer Yudkowsky & Nate Soares"
+    link: "https://ifanyonebuildsit.com/"
+  - title: "Naked Statistics: Stripping the Dread from the Data"
+    author: "Charles Wheelan"
+    link: "https://www.amazon.com/dp/039334777X"
+  - title: "The Visual Display of Quantitative Information"
+    author: "Edward Tufte"
+    link: "https://www.amazon.com/dp/0961392142"
+  - title: "Imagined Communities: Reflections on the Origin and Spread of Nationalism"
+    author: "Benedict Anderson"
+    link: "https://www.versobooks.com/products/1126-imagined-communities"
+
+# Hobbies
+hobbies:
+  - "Reading"
+  - "Photography"
+  - "Running"
+  - "Nature walks"
+  - "Hikes"
+  - "Numismatics"
+  - "Philately"
+
+hobbies_note: >
+  Outside of my work, I’m usually soundtracking my life with a mix of sitcom marathons 
+  and curated playlists. I find that the right playlist is as essential to a 
+  productive coding session as a clean environment. There’s almost always music playing 
+  in the background when I work. Currently, my music taste is dipping into reggaeton and old classics,
+  but I’m always on the lookout for new recommendations.
+
+# Campus leadership
+involvement:
+  - name: "SpartaHack"
+    role: "Co-Director"
+    logo: "img/sh11logo.png"
+    url: "https://spartahack.com"
+    description: "MSU's annual hackathon and one of Michigan's largest student-run hackathon."
+  - name: "International Students Association"
+    role: "President"
+    logo: "img/isalogotransparent.png"
+    url: "https://www.instagram.com/msu_isa"
+    description: "MSU's hub for international students, and its launchpad for advocacy, cultural exchange, community engagement and support."
+  - name: "MSU Residential & Hospitality Services"
+    role: "Resident Assistant"
+    logo: "img/rehs.jpg"
+    url: "https://liveon.msu.edu/resident-assistant"
+    description: "Supporting students and fostering community in MSU residential housing."
+  - name: "MSU Undergraduate Research Office"
+    role: "Research Ambassador"
+    logo: "img/urca.jpg"
+    url: "https://urca.msu.edu/people/monislow@msu.edu"
+    description: "Promoting undergraduate research engagement at MSU, assisting students find and thrive in research opportunities."
+
+# Contact
+email: "monislow@msu.edu"
+linkedin: "https://www.linkedin.com/in/lowell-monis"
+github: "https://github.com/lowell-monis"
+instagram: "https://instagram.com/lowell.monis"
+
+# ── Contact form — GitHub Actions dispatch ───────────────────
+# 1. Create a fine-grained PAT at github.com/settings/tokens
+#    Permissions needed: Contents (read), Actions (write) on this repo only.
+# 2. Paste it below as dispatch_token.
+# 3. Add SMTP_USER, SMTP_PASS, TO_EMAIL (and optionally SMTP_HOST, SMTP_PORT)
+#    to repo Settings > Secrets and variables > Actions.
+dispatch_token: ""
+form_endpoint: "https://api.github.com/repos/lowell-monis/lowell-monis.github.io/dispatches"

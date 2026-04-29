@@ -24,3 +24,6 @@ __pycache__/
 ## from unauthorized access.
 .env
 .env.*
+
+# Built site — deployed by GitHub Actions, not committed
+docs/

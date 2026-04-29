@@ -49,3 +49,4 @@ results_impact: >
 repo_url: "https://github.com/zeke-wonder-dog/spartan-cheer-analysis"
 notebook_url: "https://github.com/zeke-wonder-dog/spartan-cheer-analysis/blob/main/cheer_analysis.ipynb"
 image_path: "img/placeholder_project_2.png"
+image_type: "icon"   # "icon" (large square) or "banner" (full-width strip)

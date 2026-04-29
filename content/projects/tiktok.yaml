@@ -1,0 +1,56 @@
+# ============================================================
+# content/projects/tiktok.yaml
+# ============================================================
+
+title: "TikTok Integrity & Influence: A Misinformation Dashboard"
+
+short_summary: >
+  Analyzed metadata from 19,000+ TikTok videos to map how misinformation
+  spreads through the platform's content moderation pipeline. Built an
+  interactive Dash dashboard visualizing content verification flows and
+  the relationship between video duration and integrity outcomes.
+
+tech_stack:
+  - Python
+  - Plotly Dash
+  - pandas
+  - scipy
+  - Jupyter Notebooks
+  - Kaggle API
+  - CSS
+  - uv
+
+problem_statement: >
+  Mis- and disinformation on short-form video platforms is difficult to study
+  because content moves fast and verification is inconsistent. This project
+  examines how TikTok's moderation pipeline distinguishes "claims" from
+  "opinions" and whether video metadata, specifically duration, correlates
+  with integrity outcomes, aiming to surface structural patterns in how
+  malcontent spreads.
+
+approach: >
+  Using a pedagogical dataset of 19,000+ TikTok videos from Kaggle,
+  features including claim status, verification outcomes, moderator review labels,
+  and video duration were analyzed. A Sankey diagram maps the full content
+  journey through the moderation pipeline, while kernel density estimation
+  compares duration distributions across content types. The multi-page Dash app
+  integrates a word cloud, correlation views, and interactive filters for
+  exploratory analysis that is up to the interpretation of the viewer.
+
+results_impact: >
+  Claim-based videos are disproportionately shorter and less frequently verified,
+  creating a high-velocity environment where misinformation can thrive before
+  moderation catches up. The final product is a deployed dashboard, titled
+  "Algorithmic Accountability: Can TikTok Hold the Leash on Mis/disinformation?"
+  that provides an accessible, interactive lens for researchers and 
+  educators to explore these dynamics without requiring local setup. 
+  The user has full control to explore the data and draw their own conclusions about the dynamics
+  of misinformation on the platform, although a baseline is provided. A storytelling
+  narrative is intentionally avoided to encourage critical thinking and personal interpretation.
+  This is primarily a data exploration and visualization project rather than a 
+  traditional predictive modeling case study.
+
+repo_url: "https://github.com/lowell-monis/tiktok-dashboard"
+dashboard_url: "https://lowell-monis-tiktok-dashboard.share.connect.posit.cloud/"
+image_path: "img/tiktok_dashboard.png"
+image_type: "banner"
