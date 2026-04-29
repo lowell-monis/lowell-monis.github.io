@@ -284,29 +284,6 @@ var _didDrag = false;
   render();
 })();
 
-/* ── About photo cycling ─────────────────────────────────── */
-(function () {
-  var wrap = document.querySelector(".about-photo-wrap[data-photos]");
-  if (!wrap) return;
-  var img = wrap.querySelector("img");
-  if (!img) return;
-
-  var photos;
-  try { photos = JSON.parse(wrap.getAttribute("data-photos")); } catch (e) { return; }
-  if (!photos || photos.length < 2) return;
-
-  var current = 0;
-
-  wrap.addEventListener("click", function () {
-    current = (current + 1) % photos.length;
-    img.style.opacity = "0";
-    setTimeout(function () {
-      img.src = photos[current];
-      img.style.opacity = "";
-    }, 220);
-  });
-})();
-
 /* ── Contact form ────────────────────────────────────────── */
 /*
  * GitHub dispatch endpoint  → triggers Actions workflow → smtplib email
@@ -380,3 +357,27 @@ var _didDrag = false;
       });
   });
 })();
+
+/* ── About photo cycling ─────────────────────────────────── */
+(function () {
+  var wrap = document.querySelector(".about-photo-wrap[data-photos]");
+  if (!wrap) return;
+  var img = wrap.querySelector("img");
+  if (!img) return;
+
+  var photos;
+  try { photos = JSON.parse(wrap.getAttribute("data-photos")); } catch (e) { return; }
+  if (!photos || photos.length < 2) return;
+
+  var current = 0;
+
+  wrap.addEventListener("click", function () {
+    current = (current + 1) % photos.length;
+    img.style.opacity = "0";
+    setTimeout(function () {
+      img.src = photos[current];
+      img.style.opacity = "";
+    }, 220);
+  });
+})();
+

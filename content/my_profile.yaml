@@ -207,15 +207,11 @@ involvement:
 
 # Contact
 email: "monislow@msu.edu"
+
+# ── Contact form — GitHub Actions dispatch ───────────────────
+dispatch_token: ""
+form_endpoint: "https://api.github.com/repos/lowell-monis/lowell-monis.github.io/dispatches"
 linkedin: "https://www.linkedin.com/in/lowell-monis"
 github: "https://github.com/lowell-monis"
 instagram: "https://instagram.com/lowell.monis"
 
-# ── Contact form — GitHub Actions dispatch ───────────────────
-# 1. Create a fine-grained PAT at github.com/settings/tokens
-#    Permissions needed: Contents (read), Actions (write) on this repo only.
-# 2. Paste it below as dispatch_token.
-# 3. Add SMTP_USER, SMTP_PASS, TO_EMAIL (and optionally SMTP_HOST, SMTP_PORT)
-#    to repo Settings > Secrets and variables > Actions.
-dispatch_token: ""
-form_endpoint: "https://api.github.com/repos/lowell-monis/lowell-monis.github.io/dispatches"
