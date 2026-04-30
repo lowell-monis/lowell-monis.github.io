@@ -10,8 +10,9 @@ title: "NYC 311 Service Request Analysis"
 short_summary: >
   Ingested and queried 200,000 NYC 311 complaints on AWS (S3 + Athena) to
   identify borough-level resolution inequities across city agencies, and built
-  a logistic regression classifier -- validated against SageMaker Linear Learner --
-  to flag at-intake whether a request will resolve within 3 days.
+  a logistic regression classifier, validated against SageMaker Linear Learner,
+  to flag at-intake whether a request will resolve within 3 days. 
+  Icon: By Gwgross - Own work, Public Domain, https://commons.wikimedia.org/w/index.php?curid=165081658
 
 tech_stack:
   - AWS S3

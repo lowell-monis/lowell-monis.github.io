@@ -76,17 +76,17 @@ what_i_bring:
 - "End-to-end Project Management"
 
 news:
-  - date: "April 2026"
+  - date: "Apr 2026"
     text: "Awarded the inaugural CMSE Academic Achievement Award for outstanding academic achievement and contributions to the department."
-  - date: "April 2025"
+  - date: "Apr 2025"
     text: "Won a first place award for my poster presentation on the policy and political impact of demographic diversity in U.S. state legislatures at the 2026 MSU Undergraduate Research and Arts Forum."
-  - date: "March 2026"
+  - date: "Mar 2026"
     text: "Incoming Data Engineering Intern at Tesla, starting May 2026."
-  - date: "December 2025"
+  - date: "Dec 2025"
     text: "Commencing research at JimLab investigating drug use epidemiology with Bayesian hierarchical models."
 
 journey:
-  - period: "August 2023 – May 2027"
+  - period: "August 2023 - May 2027"
     role: "B.S. Data Science"
     organization: "Michigan State University"
     logo: "img/msu.png"
@@ -99,7 +99,7 @@ journey:
       in the College of Natural Science.
 
 
-  - period: "Jan 2024 – Present"
+  - period: "Jan 2024 - Present"
     role: "Research Assistant"
     organization: "JimLab, MSU Dept. of Epidemiology & Biostatistics"
     logo: "img/msu.png"
@@ -108,7 +108,7 @@ journey:
       Developing Bayesian hierarchical models to study drug purchase
       opportunities and drug use incidence under Dr. Jim Anthony.
 
-  - period: "Aug 2024 – Present"
+  - period: "Aug 2024 - Present"
     role: "Supervisor & Learning Assistant"
     organization: "Michigan State University"
     logo: "img/msu.png"
@@ -120,7 +120,7 @@ journey:
       College Algebra, Quantitative Literacy, Asian Politics,
       and Data Analysis and Visualization for Politics.
 
-  - period: "Jun – Nov 2025"
+  - period: "Jun - Nov 2025"
     role: "Data Science Intern"
     organization: "Delta Dental of Michigan"
     logo: "img/ddmi.png"
@@ -176,11 +176,11 @@ hobbies:
   - "Philately"
 
 hobbies_note: >
-  Outside of my work, I’m usually soundtracking my life with a mix of sitcom marathons 
+  Outside of my work, I'm usually soundtracking my life with a mix of sitcom marathons 
   and curated playlists. I find that the right playlist is as essential to a 
-  productive coding session as a clean environment. There’s almost always music playing 
+  productive coding session as a clean environment. There's almost always music playing 
   in the background when I work. Currently, my music taste is dipping into reggaeton and old classics,
-  but I’m always on the lookout for new recommendations.
+  but I'm always on the lookout for new recommendations.
 
 # Campus leadership
 involvement:
@@ -188,22 +188,22 @@ involvement:
     role: "Co-Director"
     logo: "img/sh11logo.png"
     url: "https://spartahack.com"
-    description: "MSU's annual hackathon and one of Michigan's largest student-run hackathon."
+    description: "After serving as the Logistics Lead for a year, where we reduced operational costs by 40% while improving service quality, I now lead MSU's annual hackathon and one of Michigan's largest student-run hackathons."
   - name: "International Students Association"
     role: "President"
     logo: "img/isalogotransparent.png"
     url: "https://www.instagram.com/msu_isa"
-    description: "MSU's hub for international students, and its launchpad for advocacy, cultural exchange, community engagement and support."
+    description: "I have served as an Events and Outreach Director, Vice President, and now President of MSU's hub for international students, and its launchpad for advocacy, cultural exchange, community engagement and support. In my roles, I have worked with university leadership, advocacy organizations, and student governance bodies, while expanding ISA's coalition of affiliates, to advocate for the needs of international students and foster a welcoming campus environment."
   - name: "MSU Residential & Hospitality Services"
     role: "Resident Assistant"
     logo: "img/rehs.jpg"
     url: "https://liveon.msu.edu/resident-assistant"
-    description: "Supporting students and fostering community in MSU residential housing."
+    description: "I support students and foster community in MSU's residential housing by running effective programs, resolving conflicts, and creating a supportive and safe environment for 50 residents, while serving in an on-call capacity to manage crises, run emergency response operations, enforce policies, maintain safety."
   - name: "MSU Undergraduate Research Office"
     role: "Research Ambassador"
     logo: "img/urca.jpg"
     url: "https://urca.msu.edu/people/monislow@msu.edu"
-    description: "Promoting undergraduate research engagement at MSU, assisting students find and thrive in research opportunities."
+    description: "I promote undergraduate research engagement at MSU, assisting students find and thrive in research opportunities, while supporting office programming."
 
 # Contact
 email: "monislow@msu.edu"
