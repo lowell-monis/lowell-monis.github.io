@@ -149,6 +149,9 @@ coffee_order: "Iced americano + 2 pumps of honey blend syrup + brown sugar cold 
 
 # Bookshelf — title, author, optional link
 reading_list:
+  - title: "Encyclical Letter <i>Magnifica Humanitas</i> on Safeguarding the Human Person in the Time of Artificial Intelligence"
+    author: "His Holiness Pope Leo XIV"
+    link: "https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html"
   - title: "The Prince"
     author: "Niccolò Machiavelli (Mansfield tr.)"
     link: "https://www.amazon.com/dp/0226500438"
