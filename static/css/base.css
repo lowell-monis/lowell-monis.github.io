@@ -892,7 +892,7 @@ a:hover { text-decoration: underline; }
   z-index: 2;
 }
 
-.tone-arm-wrap.playing { transform: rotate(2deg); }
+.tone-arm-wrap.playing { transform: rotate(-25deg); }
 
 .tone-arm-shaft {
   width: 2.5px;
